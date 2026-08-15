@@ -44,3 +44,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Keep application sources visible even when a global Git ignore contains lib/.
+!/lib/
+!/lib/**
