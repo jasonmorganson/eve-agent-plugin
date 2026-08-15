@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Eve Agent Plugin
 
-## Getting Started
+A public, template-only TypeScript starter for exposing a durable [Eve](https://github.com/vercel/eve) agent as a portable [Agent Plugin](https://agent-plugins.org/) with a standards-first MCP surface.
 
-First, run the development server:
+The repository deliberately ships fail-closed. It gives project authors the package shape, five-tool public contract, event allowlist, database schema, configuration scripts, tests, and CI foundation without pretending that OAuth, tenant ownership, cross-system idempotency, or the production Eve adapter have been completed.
+
+## What is included
+
+- Next.js 16 App Router hosting shell with Eve `0.38.3` mounted through `withEve()`.
+- Portable Agent Plugins 1.0.0 manifests as the source of truth.
+- Generated current Codex/OpenAI compatibility package.
+- Stateless `/mcp` handler with `eve_start`, `eve_get`, `eve_send`, `eve_respond`, and `eve_cancel`.
+- Public result schemas and allowlist-only event projection tests.
+- Drizzle ownership/idempotency table definitions.
+- Generic Eve instructions and an outer orchestration skill.
+- Minimal `/healthz`; the root route returns `404`.
+- Pinned dependencies, frozen lockfile, CI, and weekly Dependabot groups.
+
+## Start locally
+
+Use Node.js 24 and pnpm 11.7.0.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install --frozen-lockfile
+pnpm check
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Eve's interactive development REPL is available separately:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm exec eve dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configure the package
 
-## Learn More
+Replace the generic agent instructions and add domain tools before release. Then set the literal production MCP origin:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm configure --origin https://agent.example.com
+pnpm validate:plugin
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After registering the remote MCP connection with OpenAI, generate its adapter:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm build:openai-package --connection-id your_registered_connection_id
+```
 
-## Deploy on Vercel
+Never put bearer tokens or secrets in `mcp.json` or `.app.json`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Production boundary
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`lib/eve/service.ts` intentionally rejects every operation until it is replaced by an ownership-scoped, idempotent, authenticated adapter. Read [the implementation gates](docs/implementation-gates.md) before doing that work.
+
+The installed Eve documentation in `node_modules/eve/docs/` governs the pinned runtime. Eve now includes its own four-tool MCP channel, but this template retains the plan's five-tool application contract because it also owns the public event envelope, UI resource, idempotency records, and follow-up semantics.
+
+## License
+
+MIT

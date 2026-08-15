@@ -1,0 +1,40 @@
+{
+  "name": "eve-agent-plugin",
+  "version": "0.1.0",
+  "description": "Run and interact with a durable Eve agent.",
+  "author": {
+    "name": "Jason Morganson",
+    "url": "https://github.com/jasonmorganson"
+  },
+  "homepage": "https://github.com/jasonmorganson/eve-agent-plugin",
+  "repository": "https://github.com/jasonmorganson/eve-agent-plugin",
+  "license": "MIT",
+  "keywords": [
+    "eve",
+    "agent",
+    "mcp",
+    "chatgpt"
+  ],
+  "skills": "./skills/",
+  "apps": "./.app.json",
+  "interface": {
+    "displayName": "Eve Agent",
+    "shortDescription": "Durable agent sessions inside ChatGPT",
+    "longDescription": "Start, monitor, continue, and safely respond to durable Eve agent sessions through an authenticated MCP server.",
+    "developerName": "Jason Morganson",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/jasonmorganson/eve-agent-plugin",
+    "defaultPrompt": [
+      "Start a durable agent session for this objective.",
+      "Check the latest state of my Eve session.",
+      "Open the Eve session controls."
+    ],
+    "brandColor": "#111827",
+    "screenshots": []
+  }
+}

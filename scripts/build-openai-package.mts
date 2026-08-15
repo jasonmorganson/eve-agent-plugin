@@ -1,0 +1,50 @@
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { resolve } from "node:path";
+
+const portable = JSON.parse(await readFile(resolve("plugin.json"), "utf8"));
+const connectionIndex = process.argv.indexOf("--connection-id");
+const connectionId =
+  connectionIndex >= 0 ? process.argv[connectionIndex + 1] : undefined;
+const manifest = {
+  name: portable.name,
+  version: portable.version,
+  description: portable.description,
+  author: portable.author,
+  homepage: portable.homepage,
+  repository: portable.repository,
+  license: portable.license,
+  keywords: portable.keywords,
+  skills: "./skills/",
+  apps: "./.app.json",
+  interface: {
+    displayName: "Eve Agent",
+    shortDescription: "Durable agent sessions inside ChatGPT",
+    longDescription:
+      "Start, monitor, continue, and safely respond to durable Eve agent sessions through an authenticated MCP server.",
+    developerName: portable.author.name,
+    category: "Developer Tools",
+    capabilities: ["Interactive", "Read", "Write"],
+    websiteURL: portable.homepage,
+    defaultPrompt: [
+      "Start a durable agent session for this objective.",
+      "Check the latest state of my Eve session.",
+      "Open the Eve session controls.",
+    ],
+    brandColor: "#111827",
+    screenshots: [],
+  },
+};
+const apps = connectionId
+  ? { apps: { "eve-agent": { id: connectionId } } }
+  : { apps: {} };
+await mkdir(resolve(".codex-plugin"), { recursive: true });
+await writeFile(
+  resolve(".codex-plugin/plugin.json"),
+  `${JSON.stringify(manifest, null, 2)}\n`,
+);
+await writeFile(resolve(".app.json"), `${JSON.stringify(apps, null, 2)}\n`);
+console.log(
+  connectionId
+    ? "Generated the OpenAI adapter with its registered MCP connection."
+    : "Generated the skill-only OpenAI adapter; pass --connection-id after registering MCP.",
+);

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "eve-agent-plugin",
+  "version": "0.1.0",
+  "description": "Run and interact with a durable Eve agent.",
+  "author": {
+    "name": "Jason Morganson",
+    "url": "https://github.com/jasonmorganson"
+  },
+  "homepage": "https://github.com/jasonmorganson/eve-agent-plugin",
+  "repository": "https://github.com/jasonmorganson/eve-agent-plugin",
+  "license": "MIT",
+  "keywords": ["eve", "agent", "mcp", "chatgpt"]
+}

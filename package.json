@@ -1,27 +1,57 @@
 {
   "name": "eve-agent-plugin",
   "version": "0.1.0",
+  "description": "Template for exposing a durable Eve agent as a portable Agent Plugin and MCP App.",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "eve build && next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm validate:plugin",
+    "configure": "node --import tsx scripts/configure-template.mts",
+    "validate:plugin": "node --import tsx scripts/validate-plugin.mts",
+    "validate:release": "node --import tsx scripts/validate-plugin.mts --release",
+    "build:openai-package": "node --import tsx scripts/build-openai-package.mts"
   },
   "dependencies": {
+    "@modelcontextprotocol/ext-apps": "1.7.5",
+    "@modelcontextprotocol/server": "2.0.0",
+    "@vercel/connect": "0.4.3",
+    "@vercel/oidc": "3.8.4",
+    "ai": "7.0.58",
+    "better-auth": "1.6.29",
+    "drizzle-orm": "0.45.2",
+    "eve": "0.38.3",
+    "mcp-handler": "2.1.1",
     "next": "16.3.1",
+    "postgres": "3.4.9",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "zod": "4.4.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "20.19.43",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "ajv": "8.20.0",
+    "eslint": "9.39.5",
     "eslint-config-next": "16.3.1",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "eslint-config-prettier": "10.1.8",
+    "prettier": "3.9.6",
+    "tailwindcss": "4.3.3",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10"
   },
-  "packageManager": "pnpm@11.7.0"
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": "24.x"
+  }
 }
