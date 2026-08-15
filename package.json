@@ -22,9 +22,9 @@
   "dependencies": {
     "@modelcontextprotocol/ext-apps": "1.7.5",
     "@modelcontextprotocol/server": "2.0.0",
-    "@vercel/connect": "0.4.3",
+    "@vercel/connect": "0.7.0",
     "@vercel/oidc": "3.8.4",
-    "ai": "7.0.58",
+    "ai": "7.0.62",
     "better-auth": "1.6.29",
     "drizzle-orm": "0.45.2",
     "eve": "0.38.3",

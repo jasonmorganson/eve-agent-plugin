@@ -18,14 +18,14 @@ importers:
         specifier: 2.0.0
         version: 2.0.0
       '@vercel/connect':
-        specifier: 0.4.3
-        version: 0.4.3(ai@7.0.58(zod@4.4.3))(better-auth@1.6.29(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(next@16.3.1(@babel/core@7.29.7)(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(vitest@4.1.10(@types/node@20.19.43)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6))))(eve@0.38.3(ai@7.0.58(zod@4.4.3))(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(jiti@2.7.0)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6)))
+        specifier: 0.7.0
+        version: 0.7.0(ai@7.0.62(zod@4.4.3))(better-auth@1.6.29(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(next@16.3.1(@babel/core@7.29.7)(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(vitest@4.1.10(@types/node@20.19.43)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6))))(eve@0.38.3(ai@7.0.62(zod@4.4.3))(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(jiti@2.7.0)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6)))
       '@vercel/oidc':
         specifier: 3.8.4
         version: 3.8.4
       ai:
-        specifier: 7.0.58
-        version: 7.0.58(zod@4.4.3)
+        specifier: 7.0.62
+        version: 7.0.62(zod@4.4.3)
       better-auth:
         specifier: 1.6.29
         version: 1.6.29(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(next@16.3.1(@babel/core@7.29.7)(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(vitest@4.1.10(@types/node@20.19.43)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6)))
@@ -34,7 +34,7 @@ importers:
         version: 0.45.2(kysely@0.29.5)(postgres@3.4.9)
       eve:
         specifier: 0.38.3
-        version: 0.38.3(ai@7.0.58(zod@4.4.3))(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(jiti@2.7.0)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6))
+        version: 0.38.3(ai@7.0.62(zod@4.4.3))(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(jiti@2.7.0)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6))
       mcp-handler:
         specifier: 2.1.1
         version: 2.1.1(@modelcontextprotocol/server@2.0.0)(next@16.3.1(@babel/core@7.29.7)(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))
@@ -96,14 +96,14 @@ importers:
 
 packages:
 
-  '@ai-sdk/gateway@4.0.46':
-    resolution: {integrity: sha512-LIAO6kAG8fpXQb9L0iwPk1FIbXftvqnyC56v5NEAzeWTeL8fUsy/Hx86VPBTWEDFdwbVprjWifJOAqS6AOj3mA==}
+  '@ai-sdk/gateway@4.0.49':
+    resolution: {integrity: sha512-qdSUr4FAN7e+MHBdVzkmbGMtpf7XQdQp1AgMI3jV0QPmld/4k4QbR7mXRQgjUsPeIfAwBzMPMPziHAPP1tXRwg==}
     engines: {node: '>=22'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
 
-  '@ai-sdk/provider-utils@5.0.25':
-    resolution: {integrity: sha512-xscPPHCSjCHWrdhai25sbHCJeKNLW/3D1uSpUZa4cEtTKXA8OnPQ3+Rfu1SmM5Ea/Mf8Dfn3cllw9zeMzo/zFA==}
+  '@ai-sdk/provider-utils@5.0.27':
+    resolution: {integrity: sha512-EzAn4pdgG5g0xXtH6lE2zyNmfjDQIDjATkfqzuidEI35g++hh4+07vnjzkT/RmGmIClPZiRj/Q2GMPV2V7mkHw==}
     engines: {node: '>=22'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -1211,22 +1211,15 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@vercel/cli-config@0.2.1':
-    resolution: {integrity: sha512-RhfyXmRLHdbnry8RJqHDc+5rGxMZ0bu+fpysZjtv3bE+BubpuwxTancHOKiH5zKQREsdwFVr3mOI2kOvxlOyxA==}
-
   '@vercel/cli-config@0.2.3':
     resolution: {integrity: sha512-Ggh0Wmi92TUkUexmSUPkkDtvJmbjUr7IvF5T3FkSsWrXXs3GFzOujfxFpECdJZpux1JG4SWDv9BT4w++TDgD6A==}
-
-  '@vercel/cli-exec@1.0.0':
-    resolution: {integrity: sha512-kQF8LGie/Hbdq9/psJxLE7owRTcqMQMhgybU04gCeR7cbQAr5t8OrjefDNColJv1QSSucFt4pLwRiARVmlOnug==}
-    engines: {node: '>= 18'}
 
   '@vercel/cli-exec@1.0.1':
     resolution: {integrity: sha512-g9XerViJ/paZujufXYcu5XYI2vU2rtB4sgdpjUHde5RnOkdmpu0ngH46LCFGHoPXO/C+qDPSczIHIRN+8Q2YKQ==}
     engines: {node: '>= 18'}
 
-  '@vercel/connect@0.4.3':
-    resolution: {integrity: sha512-NDB5MhjvmeBXWAohLX7wKYnaI18pzvcqmPgSqdPHUcIdYNgHk8KlqjSkII92MgOb+zzP5t0J0yiQScwXKzkmow==}
+  '@vercel/connect@0.7.0':
+    resolution: {integrity: sha512-9gGqZx5BKKNeVdmlZlr1nXSRv1z0FoD5dhCOIBdWL16HrmT/FhNmGNGYR/gD0Tx0vXIC69nu+CKeIGPDluytgA==}
     peerDependencies:
       '@ai-sdk/mcp': ^1 || ^2
       '@auth/core': '>=0.37.0'
@@ -1250,10 +1243,6 @@ packages:
 
   '@vercel/oidc@3.2.0':
     resolution: {integrity: sha512-UycprH3T6n3jH0k44NHMa7pnFHGu/N05MjojYr+Mc6I7obkoLIJujSWwin1pCvdy/eOxrI/l3uDLQsmcrOb4ug==}
-    engines: {node: '>= 20'}
-
-  '@vercel/oidc@3.8.1':
-    resolution: {integrity: sha512-ufdalm2MWOYksyj8KVpWjoOFPJO6zoYpuyvIggIQ2bB0CFCjTCiTkGXHqAKwG77GVRjOaN3/8S5ITlZpXWmqOw==}
     engines: {node: '>= 20'}
 
   '@vercel/oidc@3.8.4':
@@ -1306,8 +1295,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  ai@7.0.58:
-    resolution: {integrity: sha512-GfgO90CQQ0yYuoxJAUOeQ6tviyYw1BUIDygSZ1q3Ce6kSc93tYmB5eltKY/NxC0YOouAax7JvDqVnYxvIAr04Q==}
+  ai@7.0.62:
+    resolution: {integrity: sha512-/YiuaaFIUPAiGqzHphnu9NuHQKbToZjlZkKoqGsQx6TFd7CZj6Z3eQUNeK6er1kXb9Ou5hRntRX4dvvE/kHYiQ==}
     engines: {node: '>=22'}
     peerDependencies:
       zod: ^3.25.76 || ^4.1.8
@@ -3521,14 +3510,14 @@ packages:
 
 snapshots:
 
-  '@ai-sdk/gateway@4.0.46(zod@4.4.3)':
+  '@ai-sdk/gateway@4.0.49(zod@4.4.3)':
     dependencies:
       '@ai-sdk/provider': 4.0.7
-      '@ai-sdk/provider-utils': 5.0.25(zod@4.4.3)
+      '@ai-sdk/provider-utils': 5.0.27(zod@4.4.3)
       '@vercel/oidc': 3.2.0
       zod: 4.4.3
 
-  '@ai-sdk/provider-utils@5.0.25(zod@4.4.3)':
+  '@ai-sdk/provider-utils@5.0.27(zod@4.4.3)':
     dependencies:
       '@ai-sdk/provider': 4.0.7
       '@standard-schema/spec': 1.1.0
@@ -4410,39 +4399,24 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.12.2':
     optional: true
 
-  '@vercel/cli-config@0.2.1':
-    dependencies:
-      xdg-app-paths: 5.5.1
-      zod: 4.1.11
-
   '@vercel/cli-config@0.2.3':
     dependencies:
       xdg-app-paths: 5.5.1
       zod: 4.1.11
 
-  '@vercel/cli-exec@1.0.0':
-    dependencies:
-      execa: 5.1.1
-
   '@vercel/cli-exec@1.0.1':
     dependencies:
       execa: 5.1.1
 
-  '@vercel/connect@0.4.3(ai@7.0.58(zod@4.4.3))(better-auth@1.6.29(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(next@16.3.1(@babel/core@7.29.7)(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(vitest@4.1.10(@types/node@20.19.43)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6))))(eve@0.38.3(ai@7.0.58(zod@4.4.3))(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(jiti@2.7.0)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6)))':
+  '@vercel/connect@0.7.0(ai@7.0.62(zod@4.4.3))(better-auth@1.6.29(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(next@16.3.1(@babel/core@7.29.7)(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(vitest@4.1.10(@types/node@20.19.43)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6))))(eve@0.38.3(ai@7.0.62(zod@4.4.3))(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(jiti@2.7.0)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6)))':
     dependencies:
-      '@vercel/oidc': 3.8.1
+      '@vercel/oidc': 3.8.4
     optionalDependencies:
-      ai: 7.0.58(zod@4.4.3)
+      ai: 7.0.62(zod@4.4.3)
       better-auth: 1.6.29(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(next@16.3.1(@babel/core@7.29.7)(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(vitest@4.1.10(@types/node@20.19.43)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6)))
-      eve: 0.38.3(ai@7.0.58(zod@4.4.3))(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(jiti@2.7.0)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6))
+      eve: 0.38.3(ai@7.0.62(zod@4.4.3))(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(jiti@2.7.0)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6))
 
   '@vercel/oidc@3.2.0': {}
-
-  '@vercel/oidc@3.8.1':
-    dependencies:
-      '@vercel/cli-config': 0.2.1
-      '@vercel/cli-exec': 1.0.0
-      jose: 5.10.0
 
   '@vercel/oidc@3.8.4':
     dependencies:
@@ -4504,11 +4478,11 @@ snapshots:
 
   acorn@8.18.0: {}
 
-  ai@7.0.58(zod@4.4.3):
+  ai@7.0.62(zod@4.4.3):
     dependencies:
-      '@ai-sdk/gateway': 4.0.46(zod@4.4.3)
+      '@ai-sdk/gateway': 4.0.49(zod@4.4.3)
       '@ai-sdk/provider': 4.0.7
-      '@ai-sdk/provider-utils': 5.0.25(zod@4.4.3)
+      '@ai-sdk/provider-utils': 5.0.27(zod@4.4.3)
       zod: 4.4.3
 
   ajv-formats@3.0.1(ajv@8.20.0):
@@ -5222,9 +5196,9 @@ snapshots:
 
   etag@1.8.1: {}
 
-  eve@0.38.3(ai@7.0.58(zod@4.4.3))(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(jiti@2.7.0)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6)):
+  eve@0.38.3(ai@7.0.62(zod@4.4.3))(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(jiti@2.7.0)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6)):
     dependencies:
-      ai: 7.0.58(zod@4.4.3)
+      ai: 7.0.62(zod@4.4.3)
       nitro: 3.0.260610-beta(drizzle-orm@0.45.2(kysely@0.29.5)(postgres@3.4.9))(jiti@2.7.0)(vite@8.2.1(@types/node@20.19.43)(jiti@2.7.0)(tsx@4.20.6))
       undici: 8.9.0
     transitivePeerDependencies:
