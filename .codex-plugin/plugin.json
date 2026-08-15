@@ -9,12 +9,7 @@
   "homepage": "https://github.com/jasonmorganson/eve-agent-plugin",
   "repository": "https://github.com/jasonmorganson/eve-agent-plugin",
   "license": "MIT",
-  "keywords": [
-    "eve",
-    "agent",
-    "mcp",
-    "chatgpt"
-  ],
+  "keywords": ["eve", "agent", "mcp", "chatgpt"],
   "skills": "./skills/",
   "apps": "./.app.json",
   "interface": {
@@ -23,11 +18,7 @@
     "longDescription": "Start, monitor, continue, and safely respond to durable Eve agent sessions through an authenticated MCP server.",
     "developerName": "Jason Morganson",
     "category": "Developer Tools",
-    "capabilities": [
-      "Interactive",
-      "Read",
-      "Write"
-    ],
+    "capabilities": ["Interactive", "Read", "Write"],
     "websiteURL": "https://github.com/jasonmorganson/eve-agent-plugin",
     "defaultPrompt": [
       "Start a durable agent session for this objective.",

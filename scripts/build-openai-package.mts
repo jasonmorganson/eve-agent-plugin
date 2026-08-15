@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import { format } from "prettier";
 
 const portable = JSON.parse(await readFile(resolve("plugin.json"), "utf8"));
 const connectionIndex = process.argv.indexOf("--connection-id");
@@ -40,9 +41,12 @@ const apps = connectionId
 await mkdir(resolve(".codex-plugin"), { recursive: true });
 await writeFile(
   resolve(".codex-plugin/plugin.json"),
-  `${JSON.stringify(manifest, null, 2)}\n`,
+  await format(JSON.stringify(manifest), { parser: "json" }),
 );
-await writeFile(resolve(".app.json"), `${JSON.stringify(apps, null, 2)}\n`);
+await writeFile(
+  resolve(".app.json"),
+  await format(JSON.stringify(apps), { parser: "json" }),
+);
 console.log(
   connectionId
     ? "Generated the OpenAI adapter with its registered MCP connection."
